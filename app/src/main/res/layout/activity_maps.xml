@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.digikrafi.mybikes.model.Features" />
+
+        <variable
+            name="feature"
+            type="com.digikrafi.mybikes.model.Features" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:animateLayoutChanges="true"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:id="@+id/mapView"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_chainStyle="spread_inside"
+        map:layout_constraintBottom_toTopOf="@+id/itemHolderMapView"
+        map:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_weight="55"
+        map:layout_constraintStart_toEndOf="@+id/itemHolderMapView"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        tools:context=".ui.MapsActivity" />
+
+    <include
+        android:id="@+id/itemHolderMapView"
+        layout="@layout/item_bike_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+ />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
